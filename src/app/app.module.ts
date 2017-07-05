@@ -1,9 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MdButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModule } from '@angular/material';
 import { MaterialModule } from '@angular/material';
-import { MdButtonModule, MdDatepickerModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModule ,MdCheckboxModule} from '@angular/material';
+
 
 import { AppComponent } from './app.component';
 
@@ -15,7 +16,13 @@ import { AppComponent } from './app.component';
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
-    MdButtonModule, MdDatepickerModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModule ,MdCheckboxModule
+    HttpModule,
+    BrowserAnimationsModule,
+    MdButtonModule,
+    MdMenuModule,
+    MdCardModule,
+    MdToolbarModule,
+    MdIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,33 +1,19 @@
 import { Component } from '@angular/core';
-import {MdDatepickerModule} from '@angular/material'
+import { Http } from '@angular/http';
+import 'rxjs/add/operator/map'
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  folders = [
-    {
-      name: 'Photos',
-      updated: new Date('1/1/16'),
-    },
-    {
-      name: 'Recipes',
-      updated: new Date('1/17/16'),
-    },
-    {
-      name: 'Work',
-      updated: new Date('1/28/16'),
-    }
-  ];
-  notes = [
-    {
-      name: 'Vacation Itinerary',
-      updated: new Date('2/20/16'),
-    },
-    {
-      name: 'Kitchen Remodel',
-      updated: new Date('1/18/16'),
-    }
-  ];
+ myData: Array<any>;
+
+  constructor(private http:Http) {
+    
+    this.http.get('https://jsonplaceholder.typicode.com/photos')
+      .map(response => response.json())
+      .subscribe(res => this.myData = res);
+
+  }
 }
